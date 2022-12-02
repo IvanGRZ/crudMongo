@@ -1,0 +1,76 @@
+//Utilizando Mongo Shell, crear una base de datos llamada ecommerce que contenga dos colecciones: mensajes y productos.
+
+    mongod --dbpath C:\Users\iguerrero\Desktop\CursoBackEndCoderHouse\Actividades tareas\Entregable 8\Actividad
+
+
+//Agregar 10 documentos con valores distintos a las colecciones mensajes y productos
+    db.productos.insertOne(
+        [
+            {
+                "title":"Regla",
+                "price":200,
+                "thumbnail":"https://e7.pngegg.com/pngimages/801/702/png-clipart-ruler-ruler.png",
+                "id":1
+            }
+            ,
+            {
+                "title":"Escuadra",
+                "price":1200,
+                "thumbnail":"https://w7.pngwing.com/pngs/918/129/png-transparent-set-square-thumbnail.png",
+                "id":2
+            },
+            {
+                "title":"Compas",
+                "price":3298,
+                "thumbnail":"https://img.lovepik.com/free-png/20211125/lovepik-compasses-png-image_401125773_wh1200.png",
+                "id":3
+            },
+            {
+                "title":"Transportador",
+                "price":5000,
+                "thumbnail":"https://e1.pngegg.com/pngimages/938/542/png-clipart-clear-protractor-protractor.png",
+                "id":4
+            },
+            {
+                "title":"Escuadra 2",
+                "price":460,
+                "thumbnail":"https://images.emojiterra.com/google/noto-emoji/v2.034/512px/1f4d0.png",
+                "id":5
+            }
+        ]
+    )
+
+
+    db.mensajes.insertOne(
+        [
+            {
+                user: "Ivan", 
+                text:"Hola"
+            },
+            {
+                user: "Soporte",
+                text:"en que puedo ayudarle?"
+            },
+            {
+                user: "Ivan",
+                text:"Tengo un problema"
+            },
+            {
+                user: "Soporte",
+                text:"Puede describirlo"
+            },
+            {
+                user: "Ivan",
+                text:"No"
+            }        
+        ]
+    )
+
+// Listar todos los documentos en cada colección.
+
+    db.mensajes.find({})
+    db.productos.find({})
+
+// Mostrar la cantidad de documentos almacenados en cada una de ellas.
+    db.mesnajes.estimatedDocumentCount()
+    db.productos.estimatedDocumentCount()
